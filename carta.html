@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="val">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Carta | Cal Marengo Gastrobar</title>
+        <meta
+            name="description"
+            content="Carta de Cal Marengo Gastrobar a Vinalesa. Entrepans 2.0, esmorzars i plats de cuina valenciana tradicional."
+        />
+        <meta name="robots" content="index, follow" />
+
+        <!-- Canonical y Hreflang -->
+        <link rel="canonical" href="https://calmarengo.com/carta" />
+        <link
+            rel="alternate"
+            hreflang="val"
+            href="https://calmarengo.com/carta"
+        />
+        <link
+            rel="alternate"
+            hreflang="es"
+            href="https://calmarengo.com/es/carta"
+        />
+        <link
+            rel="alternate"
+            hreflang="x-default"
+            href="https://calmarengo.com/carta"
+        />
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+        <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;500;600&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/styles.css" />
+
+        <style>
+            body {
+                padding-top: 0;
+            }
+
+            .carta-page-header {
+                background-color: var(--color-black);
+                padding: var(--spacing-sm) var(--spacing-md);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: sticky;
+                top: 0;
+                z-index: 100;
+            }
+
+            .carta-page-header .logo {
+                font-family: var(--font-display);
+                font-size: 1.4rem;
+                font-weight: 400;
+                color: var(--color-gold);
+                text-decoration: none;
+                font-style: italic;
+            }
+
+            .carta-page-header .logo span {
+                display: block;
+                font-family: var(--font-body);
+                font-size: 0.6rem;
+                letter-spacing: 0.15em;
+                text-transform: uppercase;
+                color: var(--color-cream);
+                opacity: 0.7;
+                margin-top: 0.15rem;
+            }
+
+            .carta-lang-switch {
+                display: flex;
+                gap: 0.5rem;
+            }
+
+            .carta-lang-switch a {
+                color: var(--color-cream);
+                opacity: 0.5;
+                text-decoration: none;
+                font-size: 0.75rem;
+                font-weight: 600;
+                padding: 0.4rem 0.6rem;
+                border: 1px solid transparent;
+                border-radius: 4px;
+                transition: all 0.3s ease;
+            }
+
+            .carta-lang-switch a.active {
+                opacity: 1;
+                color: var(--color-gold);
+                border-color: var(--color-gold);
+            }
+
+            .carta-lang-switch a:hover:not(.active) {
+                opacity: 0.8;
+            }
+
+            #carta-content {
+                padding: var(--spacing-md);
+                padding-bottom: var(--spacing-lg);
+                background-color: var(--color-cream-dark);
+            }
+
+            #carta-content .section-title {
+                font-size: 2rem;
+                margin-bottom: var(--spacing-md);
+            }
+
+            .carta-footer {
+                background-color: var(--color-black);
+                color: var(--color-cream);
+                padding: var(--spacing-md);
+                text-align: center;
+            }
+
+            .carta-footer p {
+                font-size: 0.9rem;
+                margin-bottom: var(--spacing-xs);
+            }
+
+            .carta-footer a {
+                color: var(--color-gold);
+                text-decoration: none;
+                font-weight: 500;
+            }
+
+            .carta-footer .btn {
+                margin-top: var(--spacing-sm);
+            }
+
+            .back-link {
+                display: inline-block;
+                color: var(--color-cream);
+                font-size: 0.8rem;
+                text-decoration: none;
+                opacity: 0.7;
+                margin-top: var(--spacing-sm);
+            }
+
+            .back-link:hover {
+                opacity: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Header con selector de idioma -->
+        <header class="carta-page-header">
+            <a href="index.html" class="logo">
+                Cal Marengo
+                <span>Gastrobar</span>
+            </a>
+            <div class="carta-lang-switch">
+                <a href="carta.html" class="active">VAL</a>
+                <a href="es/carta.html">ES</a>
+            </div>
+        </header>
+
+        <!-- Carta -->
+        <section id="carta-content" class="carta"></section>
+
+        <!-- Footer -->
+        <footer class="carta-footer">
+            <p><strong>Cal Marengo Gastrobar</strong></p>
+            <p>C/ Cura Sapinya, 32 · Vinalesa</p>
+            <p><a href="tel:681035690">681 035 690</a></p>
+            <a href="tel:681035690" class="btn btn-primary">Reservar Taula</a>
+            <br />
+            <a href="index.html" class="back-link">← Tornar a la web</a>
+        </footer>
+
+        <!-- Datos de la carta -->
+        <script src="js/carta-data.js"></script>
+        <script>
+            document.getElementById("carta-content").innerHTML =
+                renderCarta("val");
+        </script>
+    </body>
+</html>
