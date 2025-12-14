@@ -1,0 +1,1194 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Cal Marengo | Gastrobar - Cuina Valenciana</title>
+        <meta
+            name="description"
+            content="Cal Marengo Gastrobar a Vinalesa. Esmorzars, dinars i events privats. Cuina valenciana tradicional. Entrepans, paella els divendres."
+        />
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;500;600&display=swap"
+            rel="stylesheet"
+        />
+
+        <style>
+            :root {
+                --color-gold: #c9a962;
+                --color-gold-light: #d4bc7c;
+                --color-gold-dark: #a68b4b;
+                --color-black: #1a1a1a;
+                --color-black-soft: #2d2d2d;
+                --color-cream: #f5f1e8;
+                --color-cream-dark: #e8e2d5;
+                --color-wine: #722f37;
+
+                --font-display: "Cormorant Garamond", Georgia, serif;
+                --font-body: "Montserrat", system-ui, sans-serif;
+
+                --spacing-xs: 0.5rem;
+                --spacing-sm: 1rem;
+                --spacing-md: 2rem;
+                --spacing-lg: 4rem;
+                --spacing-xl: 6rem;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            body {
+                font-family: var(--font-body);
+                background-color: var(--color-cream);
+                color: var(--color-black);
+                line-height: 1.6;
+            }
+
+            /* ============ HEADER ============ */
+            header {
+                background-color: var(--color-black);
+                padding: var(--spacing-sm) var(--spacing-md);
+                position: fixed;
+                width: 100%;
+                top: 0;
+                z-index: 1000;
+                transition: all 0.3s ease;
+            }
+
+            header.scrolled {
+                padding: var(--spacing-xs) var(--spacing-md);
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            }
+
+            nav {
+                max-width: 1200px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .logo {
+                font-family: var(--font-display);
+                font-size: 1.8rem;
+                font-weight: 400;
+                color: var(--color-gold);
+                text-decoration: none;
+                font-style: italic;
+            }
+
+            .nav-links {
+                display: flex;
+                gap: var(--spacing-md);
+                list-style: none;
+            }
+
+            .nav-links a {
+                color: var(--color-cream);
+                text-decoration: none;
+                font-size: 0.85rem;
+                font-weight: 500;
+                letter-spacing: 0.05em;
+                text-transform: uppercase;
+                transition: color 0.3s ease;
+            }
+
+            .nav-links a:hover {
+                color: var(--color-gold);
+            }
+
+            .lang-switch {
+                display: flex;
+                gap: 0.5rem;
+                margin-left: var(--spacing-md);
+                padding-left: var(--spacing-md);
+                border-left: 1px solid var(--color-black-soft);
+            }
+
+            .lang-switch a {
+                color: var(--color-cream);
+                opacity: 0.5;
+                text-decoration: none;
+                font-size: 0.75rem;
+                font-weight: 600;
+            }
+
+            .lang-switch a.active {
+                opacity: 1;
+                color: var(--color-gold);
+            }
+
+            .mobile-menu-btn {
+                display: none;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 0.5rem;
+            }
+
+            .mobile-menu-btn span {
+                display: block;
+                width: 24px;
+                height: 2px;
+                background-color: var(--color-gold);
+                margin: 5px 0;
+                transition: all 0.3s ease;
+            }
+
+            /* ============ HERO ============ */
+            .hero {
+                min-height: 100vh;
+                background: linear-gradient(
+                    135deg,
+                    var(--color-black) 0%,
+                    var(--color-black-soft) 100%
+                );
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                padding: var(--spacing-xl) var(--spacing-md);
+                position: relative;
+                overflow: hidden;
+            }
+
+            .hero::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A962' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+                opacity: 1;
+            }
+
+            .hero-content {
+                position: relative;
+                z-index: 1;
+                max-width: 800px;
+            }
+
+            .hero-logo {
+                width: 180px;
+                height: 180px;
+                border-radius: 50%;
+                background-color: var(--color-black);
+                border: 2px solid var(--color-gold);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin: 0 auto var(--spacing-lg);
+                box-shadow: 0 0 60px rgba(201, 169, 98, 0.2);
+            }
+
+            .hero-logo h1 {
+                font-family: var(--font-display);
+                font-size: 2rem;
+                font-weight: 400;
+                color: var(--color-gold);
+                font-style: italic;
+                line-height: 1.1;
+            }
+
+            .hero-logo span {
+                font-family: var(--font-body);
+                font-size: 0.7rem;
+                color: var(--color-gold);
+                letter-spacing: 0.15em;
+                text-transform: uppercase;
+                margin-top: 0.25rem;
+            }
+
+            .hero-tagline {
+                font-family: var(--font-display);
+                font-size: 1.5rem;
+                color: var(--color-gold-light);
+                font-style: italic;
+                margin-bottom: var(--spacing-sm);
+            }
+
+            .hero-claim {
+                font-size: 3rem;
+                font-family: var(--font-display);
+                color: var(--color-cream);
+                margin-bottom: var(--spacing-md);
+                line-height: 1.2;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+                color: var(--color-cream);
+                opacity: 0.8;
+                margin-bottom: var(--spacing-lg);
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-ctas {
+                display: flex;
+                gap: var(--spacing-sm);
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .btn {
+                display: inline-block;
+                padding: 1rem 2rem;
+                font-size: 0.85rem;
+                font-weight: 600;
+                text-decoration: none;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                transition: all 0.3s ease;
+                cursor: pointer;
+            }
+
+            .btn-primary {
+                background-color: var(--color-gold);
+                color: var(--color-black);
+                border: 2px solid var(--color-gold);
+            }
+
+            .btn-primary:hover {
+                background-color: transparent;
+                color: var(--color-gold);
+            }
+
+            .btn-secondary {
+                background-color: transparent;
+                color: var(--color-cream);
+                border: 2px solid var(--color-cream);
+            }
+
+            .btn-secondary:hover {
+                background-color: var(--color-cream);
+                color: var(--color-black);
+            }
+
+            /* ============ SECTIONS ============ */
+            section {
+                padding: var(--spacing-xl) var(--spacing-md);
+            }
+
+            .section-title {
+                font-family: var(--font-display);
+                font-size: 2.5rem;
+                text-align: center;
+                margin-bottom: var(--spacing-lg);
+                color: var(--color-black);
+            }
+
+            .section-title::after {
+                content: "";
+                display: block;
+                width: 60px;
+                height: 3px;
+                background: linear-gradient(
+                    90deg,
+                    var(--color-gold),
+                    var(--color-wine)
+                );
+                margin: var(--spacing-sm) auto 0;
+            }
+
+            /* ============ Mosatros ============ */
+            .about {
+                background-color: var(--color-cream);
+            }
+
+            .about-content {
+                max-width: 800px;
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            .about-text {
+                font-size: 1.15rem;
+                line-height: 1.8;
+                color: var(--color-black-soft);
+            }
+
+            .about-features {
+                display: flex;
+                justify-content: center;
+                gap: var(--spacing-lg);
+                margin-top: var(--spacing-lg);
+                flex-wrap: wrap;
+            }
+
+            .feature {
+                text-align: center;
+            }
+
+            .feature-icon {
+                width: 60px;
+                height: 60px;
+                margin: 0 auto var(--spacing-sm);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 2rem;
+            }
+
+            .feature-title {
+                font-family: var(--font-display);
+                font-size: 1.3rem;
+                color: var(--color-black);
+                margin-bottom: 0.25rem;
+            }
+
+            .feature-desc {
+                font-size: 0.9rem;
+                color: var(--color-black-soft);
+                opacity: 0.8;
+            }
+
+            /* ============ CARTA ============ */
+            .carta {
+                background-color: var(--color-cream-dark);
+            }
+
+            .carta-container {
+                max-width: 900px;
+                margin: 0 auto;
+            }
+
+            .carta-category {
+                margin-bottom: var(--spacing-lg);
+            }
+
+            .carta-category-title {
+                font-family: var(--font-display);
+                font-size: 1.8rem;
+                color: var(--color-wine);
+                margin-bottom: var(--spacing-md);
+                padding-bottom: var(--spacing-xs);
+                border-bottom: 1px solid var(--color-gold);
+            }
+
+            .carta-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                padding: var(--spacing-sm) 0;
+                border-bottom: 1px dotted rgba(0, 0, 0, 0.1);
+            }
+
+            .carta-item:last-child {
+                border-bottom: none;
+            }
+
+            .carta-item-info {
+                flex: 1;
+                padding-right: var(--spacing-md);
+            }
+
+            .carta-item-name {
+                font-family: var(--font-display);
+                font-size: 1.2rem;
+                font-weight: 600;
+                color: var(--color-black);
+                margin-bottom: 0.25rem;
+            }
+
+            .carta-item-desc {
+                font-size: 0.9rem;
+                color: var(--color-black-soft);
+                opacity: 0.8;
+            }
+
+            .carta-item-price {
+                font-family: var(--font-display);
+                font-size: 1.3rem;
+                font-weight: 600;
+                color: var(--color-wine);
+                white-space: nowrap;
+            }
+
+            .carta-note {
+                background-color: var(--color-cream);
+                padding: var(--spacing-md);
+                border-left: 4px solid var(--color-gold);
+                margin-top: var(--spacing-md);
+                font-style: italic;
+                color: var(--color-black-soft);
+            }
+
+            .carta-extras {
+                margin-top: var(--spacing-lg);
+                padding: var(--spacing-md);
+                background-color: var(--color-cream);
+                border-radius: 4px;
+            }
+
+            .carta-extras-title {
+                font-family: var(--font-display);
+                font-size: 1.3rem;
+                color: var(--color-black);
+                margin-bottom: var(--spacing-sm);
+            }
+
+            .carta-extras-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: var(--spacing-xs) var(--spacing-md);
+                font-size: 0.95rem;
+                color: var(--color-black-soft);
+            }
+
+            /* ============ HORARIOS ============ */
+            .horarios {
+                background-color: var(--color-black);
+                color: var(--color-cream);
+            }
+
+            .horarios .section-title {
+                color: var(--color-cream);
+            }
+
+            .horarios-grid {
+                max-width: 600px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: var(--spacing-sm);
+            }
+
+            .horario-item {
+                display: flex;
+                justify-content: space-between;
+                padding: var(--spacing-sm);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .horario-dia {
+                font-weight: 500;
+            }
+
+            .horario-horas {
+                color: var(--color-gold);
+            }
+
+            .horario-cerrado {
+                color: var(--color-wine);
+                opacity: 0.8;
+            }
+
+            .horarios-note {
+                text-align: center;
+                margin-top: var(--spacing-md);
+                padding: var(--spacing-md);
+                background: rgba(201, 169, 98, 0.1);
+                border: 1px solid var(--color-gold);
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .horarios-note strong {
+                color: var(--color-gold);
+                font-family: var(--font-display);
+                font-size: 1.2rem;
+                display: block;
+                margin-bottom: 0.5rem;
+            }
+
+            /* ============ CONTACTO ============ */
+            .contacto {
+                background-color: var(--color-cream);
+            }
+
+            .contacto-grid {
+                max-width: 1000px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: var(--spacing-lg);
+            }
+
+            .contacto-info {
+                display: flex;
+                flex-direction: column;
+                gap: var(--spacing-md);
+            }
+
+            .contacto-item {
+                display: flex;
+                align-items: flex-start;
+                gap: var(--spacing-sm);
+            }
+
+            .contacto-icon {
+                width: 40px;
+                height: 40px;
+                background-color: var(--color-gold);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.2rem;
+                flex-shrink: 0;
+            }
+
+            .contacto-text h3 {
+                font-family: var(--font-display);
+                font-size: 1.2rem;
+                color: var(--color-black);
+                margin-bottom: 0.25rem;
+            }
+
+            .contacto-text p {
+                color: var(--color-black-soft);
+            }
+
+            .contacto-text a {
+                color: var(--color-wine);
+                text-decoration: none;
+                font-weight: 500;
+            }
+
+            .contacto-text a:hover {
+                text-decoration: underline;
+            }
+
+            .contacto-cta {
+                margin-top: var(--spacing-md);
+            }
+
+            .contacto-map {
+                background-color: var(--color-cream-dark);
+                border-radius: 4px;
+                overflow: hidden;
+                min-height: 300px;
+            }
+
+            .contacto-map iframe {
+                width: 100%;
+                height: 100%;
+                min-height: 300px;
+                border: none;
+            }
+
+            /* ============ FOOTER ============ */
+            footer {
+                background-color: var(--color-black);
+                color: var(--color-cream);
+                padding: var(--spacing-lg) var(--spacing-md) var(--spacing-md);
+            }
+
+            .footer-content {
+                max-width: 1200px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: var(--spacing-lg);
+            }
+
+            .footer-col h4 {
+                font-family: var(--font-display);
+                font-size: 1.2rem;
+                color: var(--color-gold);
+                margin-bottom: var(--spacing-sm);
+            }
+
+            .footer-col p,
+            .footer-col a {
+                font-size: 0.9rem;
+                color: var(--color-cream);
+                opacity: 0.8;
+                text-decoration: none;
+                line-height: 1.8;
+            }
+
+            .footer-col a:hover {
+                opacity: 1;
+                color: var(--color-gold);
+            }
+
+            .footer-social {
+                display: flex;
+                gap: var(--spacing-sm);
+                margin-top: var(--spacing-sm);
+            }
+
+            .footer-social a {
+                width: 40px;
+                height: 40px;
+                border: 1px solid var(--color-gold);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.2rem;
+                transition: all 0.3s ease;
+            }
+
+            .footer-social a:hover {
+                background-color: var(--color-gold);
+                color: var(--color-black);
+            }
+
+            .footer-bottom {
+                max-width: 1200px;
+                margin: var(--spacing-lg) auto 0;
+                padding-top: var(--spacing-md);
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                text-align: center;
+                font-size: 0.85rem;
+                opacity: 0.6;
+            }
+
+            /* ============ RESPONSIVE ============ */
+            @media (max-width: 900px) {
+                .contacto-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .footer-content {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            @media (max-width: 768px) {
+                .nav-links {
+                    display: none;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    right: 0;
+                    background-color: var(--color-black);
+                    flex-direction: column;
+                    padding: var(--spacing-md);
+                    gap: var(--spacing-sm);
+                }
+
+                .nav-links.active {
+                    display: flex;
+                }
+
+                .mobile-menu-btn {
+                    display: block;
+                }
+
+                .lang-switch {
+                    display: none;
+                }
+
+                .hero-claim {
+                    font-size: 2rem;
+                }
+
+                .hero-ctas {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .about-features {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .horarios-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .footer-content {
+                    grid-template-columns: 1fr;
+                    text-align: center;
+                }
+
+                .footer-social {
+                    justify-content: center;
+                }
+            }
+
+            /* ============ ANIMATIONS ============ */
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .hero-content > * {
+                animation: fadeInUp 0.8s ease-out forwards;
+            }
+
+            .hero-logo {
+                animation-delay: 0.1s;
+            }
+            .hero-tagline {
+                animation-delay: 0.2s;
+            }
+            .hero-claim {
+                animation-delay: 0.3s;
+            }
+            .hero-subtitle {
+                animation-delay: 0.4s;
+            }
+            .hero-ctas {
+                animation-delay: 0.5s;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Header -->
+        <header id="header">
+            <nav>
+                <a href="#" class="logo">Cal Marengo</a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#Mosatros">Mosatros</a></li>
+                    <li><a href="#carta">Carta</a></li>
+                    <li><a href="#horarios">Horaris</a></li>
+                    <li><a href="#contacto">Contacte</a></li>
+                    <li class="lang-switch">
+                        <a href="#" class="active">VAL</a>
+                        <a href="#">ES</a>
+                    </li>
+                </ul>
+                <button
+                    class="mobile-menu-btn"
+                    id="mobileMenuBtn"
+                    aria-label="Menú"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </header>
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-logo">
+                    <h1>Cal Marengo</h1>
+                    <span>Gastrobar</span>
+                </div>
+                <p class="hero-tagline">Cuina Valenciana</p>
+                <h2 class="hero-claim">Esmorzars, dinars<br />i molt més</h2>
+                <p class="hero-subtitle">
+                    Un gastrobar de menjar tradicional Valencià. Aon el bon
+                    menjar i la tradició valenciana es troben cada dia.
+                </p>
+                <div class="hero-ctas">
+                    <a href="tel:681035690" class="btn btn-primary">Reservar</a>
+                    <a href="#carta" class="btn btn-secondary">Vore la Carta</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mosatros -->
+        <section class="about" id="Mosatros">
+            <h2 class="section-title">El Nostre Racó</h2>
+            <div class="about-content">
+                <p class="about-text">
+                    Cal Marengo és més que un gastrobar. Som un lloc aon la
+                    cuina valenciana de sempre se fa amb el cor i es serveix amb
+                    orgull. Cada esmorzar, cada dinar, és una oportunitat per
+                    compartir lo millor de la nostra terra. Des dels nostres
+                    entrepans als plats de cullera, tot està fet amb producte de
+                    proximitat i receptes que passen de generació en generació.
+                </p>
+                <div class="about-features">
+                    <div class="feature">
+                        <div class="feature-icon">🍳</div>
+                        <h3 class="feature-title">Esmorzars</h3>
+                        <p class="feature-desc">De 7:00 a 12:00h</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🥘</div>
+                        <h3 class="feature-title">Dinars</h3>
+                        <p class="feature-desc">Menú diari i carta</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🥂</div>
+                        <h3 class="feature-title">Events Privats</h3>
+                        <p class="feature-desc">Celebracions especials</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Carta -->
+        <section class="carta" id="carta">
+            <h2 class="section-title">La Nostra Carta</h2>
+            <div class="carta-container">
+                <!-- Entrepans -->
+                <div class="carta-category">
+                    <h3 class="carta-category-title">Entrepans 2.0</h3>
+
+                    <div class="carta-item">
+                        <div class="carta-item-info">
+                            <h4 class="carta-item-name">Barranquet</h4>
+                            <p class="carta-item-desc">
+                                Entrecuixa pollastre, formatge, creilles, bacon,
+                                salsa secreta
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="carta-item">
+                        <div class="carta-item-info">
+                            <h4 class="carta-item-name">Madrid</h4>
+                            <p class="carta-item-desc">Calamars rebozats</p>
+                        </div>
+                    </div>
+
+                    <div class="carta-item">
+                        <div class="carta-item-info">
+                            <h4 class="carta-item-name">Serranito</h4>
+                            <p class="carta-item-desc">
+                                Secreto iberic, pernil, pimentó i tomata
+                                refregada
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="carta-item">
+                        <div class="carta-item-info">
+                            <h4 class="carta-item-name">Chivito</h4>
+                            <p class="carta-item-desc">
+                                Llom, formatge, bacon, lletuga, tomata,
+                                maionesa, ou fregit
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="carta-item">
+                        <div class="carta-item-info">
+                            <h4 class="carta-item-name">Brascada</h4>
+                            <p class="carta-item-desc">
+                                Ternera, pernil, ceba pochada
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="carta-item">
+                        <div class="carta-item-info">
+                            <h4 class="carta-item-name">Almussafes</h4>
+                            <p class="carta-item-desc">
+                                Sobrasada, formatge i ceba pochada
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="carta-item">
+                        <div class="carta-item-info">
+                            <h4 class="carta-item-name">Figatell</h4>
+                            <p class="carta-item-desc">
+                                Figatells, albergina, pimentó i ceba pochada
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="carta-item">
+                        <div class="carta-item-info">
+                            <h4 class="carta-item-name">De la Casa</h4>
+                            <p class="carta-item-desc">
+                                Llom, formatge, maionesa, creilles, xampinyo i
+                                salsa mery
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="carta-item">
+                        <div class="carta-item-info">
+                            <h4 class="carta-item-name">El Nou</h4>
+                            <p class="carta-item-desc">
+                                Llom, ou fregit trencat, pimentó encurtit,
+                                botifarra semi-picant
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="carta-note">
+                        <strong>Entrepa, una beguda i café</strong> (olives i
+                        cacau) —
+                        <strong style="color: var(--color-wine)">9,00€</strong>
+                    </div>
+                </div>
+
+                <!-- Cavall -->
+                <div class="carta-category">
+                    <h3 class="carta-category-title">Cavall</h3>
+
+                    <div class="carta-item">
+                        <div class="carta-item-info">
+                            <h4 class="carta-item-name">Cavall</h4>
+                            <p class="carta-item-desc">
+                                Carn de potro, creilles i allets tendres
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="carta-note">
+                        <strong>Entrepa, una beguda i café</strong> (olives i
+                        cacau) —
+                        <strong style="color: var(--color-wine)">10,00€</strong>
+                    </div>
+                </div>
+
+                <!-- Extras -->
+                <div class="carta-extras">
+                    <h4 class="carta-extras-title">Extres</h4>
+                    <ul
+                        style="
+                            list-style: none;
+                            font-size: 0.95rem;
+                            color: var(--color-black-soft);
+                        "
+                    >
+                        <li style="margin-bottom: 0.5rem">
+                            • Tot entrepa que continga carn de potro tindrà un
+                            extra de <strong>1,00€</strong>
+                        </li>
+                        <li style="margin-bottom: 0.5rem">
+                            • En cremaet increment <strong>0,50€</strong>
+                        </li>
+                        <li>• Sols entra una beguda, la resta es paga apart</li>
+                    </ul>
+                </div>
+
+                <!-- Fora de carta -->
+                <div
+                    class="carta-category"
+                    style="margin-top: var(--spacing-lg)"
+                >
+                    <h3 class="carta-category-title">Fora de Carta</h3>
+                    <p
+                        class="carta-item-desc"
+                        style="margin-bottom: var(--spacing-sm)"
+                    >
+                        Consulta al cambrer que hi ha hui:
+                    </p>
+                    <ul
+                        class="carta-extras-list"
+                        style="
+                            list-style: none;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 0.5rem;
+                        "
+                    >
+                        <li><span>Tortilles.</span></li>
+                        <li><span>Abadejo.</span></li>
+                        <li><span>All i pebre.</span></li>
+                        <li><span>Magre en tomata.</span></li>
+                        <li><span>Embutit de carnisseria.</span></li>
+                        <li><span>Manetes de porc.</span></li>
+                        <li><span>Carrilleres...</span></li>
+                    </ul>
+                    <p
+                        class="carta-item-desc"
+                        style="
+                            margin-top: var(--spacing-sm);
+                            font-style: italic;
+                        "
+                    >
+                        Algunes d'aquestes coses segur que estan
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Horarios -->
+        <section class="horarios" id="horarios">
+            <h2 class="section-title">Horari</h2>
+            <div class="horarios-grid">
+                <div class="horario-item">
+                    <span class="horario-dia">Dilluns</span>
+                    <span class="horario-horas">7:00 - 16:30</span>
+                </div>
+                <div class="horario-item">
+                    <span class="horario-dia">Dimarts</span>
+                    <span class="horario-horas">7:00 - 16:30</span>
+                </div>
+                <div class="horario-item">
+                    <span class="horario-dia">Dimecres</span>
+                    <span class="horario-horas">7:00 - 16:30</span>
+                </div>
+                <div class="horario-item">
+                    <span class="horario-dia">Dijous</span>
+                    <span class="horario-horas">7:00 - 16:30</span>
+                </div>
+                <div class="horario-item">
+                    <span class="horario-dia">Divendres</span>
+                    <span class="horario-horas">7:00 - 16:30</span>
+                </div>
+                <div class="horario-item">
+                    <span class="horario-dia">Dissabte</span>
+                    <span class="horario-horas">7:00 - 16:30</span>
+                </div>
+                <div class="horario-item">
+                    <span class="horario-dia">Diumenge</span>
+                    <span class="horario-cerrado">Tancat</span>
+                </div>
+            </div>
+            <div class="horarios-note">
+                <strong>🥘 Paella Valenciana</strong>
+                Tots els divendres! Reserva la teua.
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section class="contacto" id="contacto">
+            <h2 class="section-title">Contacte</h2>
+            <div class="contacto-grid">
+                <div class="contacto-info">
+                    <div class="contacto-item">
+                        <div class="contacto-icon">📍</div>
+                        <div class="contacto-text">
+                            <h3>Direcció</h3>
+                            <p>
+                                Carrer Cura Sapinya, 32<br />46114 Vinalesa,
+                                València
+                            </p>
+                            <a
+                                href="https://maps.app.goo.gl/GKktdvfg3aHN28Wj9"
+                                target="_blank"
+                                rel="noopener"
+                                >Com arribar →</a
+                            >
+                        </div>
+                    </div>
+                    <div class="contacto-item">
+                        <div class="contacto-icon">📞</div>
+                        <div class="contacto-text">
+                            <h3>Telèfon</h3>
+                            <p><a href="tel:681035690">681 035 690</a></p>
+                            <p style="font-size: 0.85rem; opacity: 0.7">
+                                Reserva per telèfon o WhatsApp
+                            </p>
+                        </div>
+                    </div>
+                    <div class="contacto-item">
+                        <div class="contacto-icon">📷</div>
+                        <div class="contacto-text">
+                            <h3>Instagram</h3>
+                            <p>
+                                <a
+                                    href="https://www.instagram.com/calmarengo/"
+                                    target="_blank"
+                                    rel="noopener"
+                                    >@calmarengo</a
+                                >
+                            </p>
+                        </div>
+                    </div>
+                    <div class="contacto-cta">
+                        <a href="tel:681035690" class="btn btn-primary"
+                            >Reservar Taula</a
+                        >
+                    </div>
+                </div>
+                <div class="contacto-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3079.5!2d-0.3686!3d39.5397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMznCsDMyJzIyLjkiTiAwwrAyMicwNy4wIlc!5e0!3m2!1ses!2ses!4v1234567890"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Ubicació Cal Marengo"
+                    >
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>Cal Marengo</h4>
+                    <p>Gastrobar<br />Cuina Valenciana</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Horari</h4>
+                    <p>
+                        Dilluns a Dissabte<br />7:00 - 16:30<br />Diumenge
+                        tancat
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacte</h4>
+                    <p>
+                        C/ Cura Sapinya, 32<br />46114 Vinalesa, València<br /><a
+                            href="tel:681035690"
+                            >681 035 690</a
+                        >
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Segueix-nos</h4>
+                    <div class="footer-social">
+                        <a
+                            href="https://www.instagram.com/calmarengo/"
+                            target="_blank"
+                            rel="noopener"
+                            aria-label="Instagram"
+                            >📷</a
+                        >
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Cal Marengo Gastrobar. Tots els drets reservats.</p>
+            </div>
+        </footer>
+
+        <script>
+            // Header scroll effect
+            const header = document.getElementById("header");
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 50) {
+                    header.classList.add("scrolled");
+                } else {
+                    header.classList.remove("scrolled");
+                }
+            });
+
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+            const navLinks = document.getElementById("navLinks");
+            mobileMenuBtn.addEventListener("click", () => {
+                navLinks.classList.toggle("active");
+            });
+
+            // Smooth scroll for nav links
+            document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+                anchor.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(
+                        this.getAttribute("href"),
+                    );
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                        });
+                        navLinks.classList.remove("active");
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

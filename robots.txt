@@ -1,0 +1,18 @@
+# Robots.txt para Cal Marengo Gastrobar
+# https://calmarengo.es
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://calmarengo.es/sitemap.xml
+
+# Bloquear carpetas de desarrollo (si existieran)
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /src/
+
+# Permitir recursos estáticos
+Allow: /css/
+Allow: /js/
+Allow: /img/
