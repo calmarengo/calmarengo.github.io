@@ -1,572 +1,224 @@
-<!doctype html>
-<html lang="ca">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>
-            Cal Marengo | Gastrobar a Vinalesa - Cuina Valenciana Tradicional
-        </title>
-        <meta
-            name="description"
-            content="Cal Marengo Gastrobar a Vinalesa, València. Esmorzars, dinars i events privats. Cuina valenciana tradicional. Entrepans artesans, paella els divendres. Reserva la teua taula."
-        />
-        <meta
-            name="keywords"
-            content="gastrobar vinalesa, restaurant vinalesa, cuina valenciana, esmorzars valencia, paella divendres, entrepans artesans, cal marengo, events privats vinalesa"
-        />
-        <meta name="author" content="Cal Marengo Gastrobar" />
-        <meta name="robots" content="index, follow" />
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cal Marengo - En Construccion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        <!-- Canonical y Hreflang -->
-        <link rel="canonical" href="https://calmarengo.es/" />
-        <link rel="alternate" hreflang="ca" href="https://calmarengo.es/" />
-        <link rel="alternate" hreflang="es" href="https://calmarengo.es/es/" />
-        <link
-            rel="alternate"
-            hreflang="x-default"
-            href="https://calmarengo.es/"
-        />
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #fff;
+            overflow: hidden;
+        }
 
-        <!-- Open Graph -->
-        <meta
-            property="og:title"
-            content="Cal Marengo | Gastrobar - Cuina Valenciana"
-        />
-        <meta
-            property="og:description"
-            content="Gastrobar a Vinalesa. Esmorzars, dinars i events privats. Cuina valenciana tradicional amb producte de proximitat."
-        />
-        <meta property="og:type" content="restaurant" />
-        <meta property="og:url" content="https://calmarengo.es/" />
-        <meta
-            property="og:image"
-            content="https://calmarengo.es/img/og-image.jpg"
-        />
-        <meta property="og:locale" content="ca_ES" />
-        <meta property="og:locale:alternate" content="es_ES" />
-        <meta property="og:site_name" content="Cal Marengo Gastrobar" />
+        .container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 600px;
+        }
 
-        <!-- Twitter Card -->
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-            name="twitter:title"
-            content="Cal Marengo | Gastrobar - Cuina Valenciana"
-        />
-        <meta
-            name="twitter:description"
-            content="Gastrobar a Vinalesa. Esmorzars, dinars i cuina valenciana tradicional."
-        />
-        <meta
-            name="twitter:image"
-            content="https://calmarengo.es/img/og-image.jpg"
-        />
+        .icon {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+            animation: bounce 2s infinite;
+        }
 
-        <!-- Geo tags -->
-        <meta name="geo.region" content="ES-VC" />
-        <meta name="geo.placename" content="Vinalesa, València" />
-        <meta name="geo.position" content="39.5397;-0.3686" />
-        <meta name="ICBM" content="39.5397, -0.3686" />
-
-        <!-- Favicon -->
-        <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
-        <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
-
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;500;600&display=swap"
-            rel="stylesheet"
-        />
-
-        <!-- CSS -->
-        <link rel="stylesheet" href="css/styles.css" />
-
-        <!-- Schema.org JSON-LD -->
-        <script type="application/ld+json">
-            {
-                "@context": "https://schema.org",
-                "@type": "Restaurant",
-                "name": "Cal Marengo Gastrobar",
-                "alternateName": "Cal Marengo",
-                "description": "Gastrobar de cuina valenciana tradicional a Vinalesa. Esmorzars, dinars i events privats.",
-                "url": "https://calmarengo.es/",
-                "telephone": "+34681035690",
-                "email": "info@calmarengo.es",
-                "image": "https://calmarengo.es/img/og-image.jpg",
-                "logo": "https://calmarengo.es/img/logo.png",
-                "priceRange": "€€",
-                "servesCuisine": ["Valenciana", "Española", "Mediterránea"],
-                "acceptsReservations": "True",
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "Carrer Cura Sapinya, 32",
-                    "addressLocality": "Vinalesa",
-                    "addressRegion": "Valencia",
-                    "postalCode": "46114",
-                    "addressCountry": "ES"
-                },
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": 39.5397,
-                    "longitude": -0.3686
-                },
-                "openingHoursSpecification": [
-                    {
-                        "@type": "OpeningHoursSpecification",
-                        "dayOfWeek": [
-                            "Monday",
-                            "Tuesday",
-                            "Wednesday",
-                            "Thursday",
-                            "Friday",
-                            "Saturday"
-                        ],
-                        "opens": "07:00",
-                        "closes": "16:30"
-                    }
-                ],
-                "sameAs": ["https://www.instagram.com/calmarengo/"],
-                "hasMenu": {
-                    "@type": "Menu",
-                    "hasMenuSection": [
-                        {
-                            "@type": "MenuSection",
-                            "name": "Entrepans 2.0",
-                            "hasMenuItem": [
-                                {
-                                    "@type": "MenuItem",
-                                    "name": "Barranquet",
-                                    "description": "Entrecuixa pollastre, formatge, creilles, bacon, salsa secreta"
-                                },
-                                {
-                                    "@type": "MenuItem",
-                                    "name": "Madrid",
-                                    "description": "Calamars rebozats"
-                                },
-                                {
-                                    "@type": "MenuItem",
-                                    "name": "Serranito",
-                                    "description": "Secreto iberic, pernil, pimento i tomata refregada"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": "4.8",
-                    "reviewCount": "150"
-                }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
             }
-        </script>
-    </head>
-    <body>
-        <!-- Header -->
-        <header id="header">
-            <nav>
-                <a href="index.html" class="logo">Cal Marengo</a>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#nosotros">Mosatros</a></li>
-                    <li><a href="#carta">Carta</a></li>
-                    <li><a href="#horarios">Horaris</a></li>
-                    <li><a href="#contacto">Contacte</a></li>
-                    <li class="lang-switch">
-                        <a href="index.html" class="active">VAL</a>
-                        <a href="es/index.html">ES</a>
-                    </li>
-                </ul>
-                <button
-                    class="mobile-menu-btn"
-                    id="mobileMenuBtn"
-                    aria-label="Menú"
-                >
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </nav>
-        </header>
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
 
-        <!-- Hero -->
-        <section class="hero">
-            <div class="hero-content">
-                <div class="hero-logo">
-                    <h1>Cal Marengo</h1>
-                    <span>Gastrobar</span>
-                </div>
-                <p class="hero-tagline">Cuina Valenciana</p>
-                <h2 class="hero-claim">Esmorzars, dinars<br />i molt més</h2>
-                <p class="hero-subtitle">
-                    Un gastrobar de menjar tradicional Valencià. Aon el bon
-                    menjar i la tradició valenciana es troben cada dia.
-                </p>
-                <div class="hero-ctas">
-                    <a href="tel:681035690" class="btn btn-primary">Reservar</a>
-                    <a href="#carta" class="btn btn-secondary">Vore la Carta</a>
-                </div>
-            </div>
-        </section>
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-        <!-- Nosotros -->
-        <section class="about" id="nosotros">
-            <h2 class="section-title">El Nostre Racó</h2>
-            <div class="about-content">
-                <p class="about-text">
-                    Cal Marengo és més que un gastrobar. Som un lloc aon la
-                    cuina valenciana de sempre es fa amb el cor i es serveix amb
-                    orgull. Cada esmorzar, cada dinar, és una oportunitat per
-                    compartir lo millor de la nostra terra. Des dels nostres
-                    entrepans als plats de cullera, tot està fet amb producte de
-                    proximitat i receptes que passen de generació en generació.
-                </p>
-                <div class="about-features">
-                    <div class="feature">
-                        <div class="feature-icon">🍳</div>
-                        <h3 class="feature-title">Esmorzars</h3>
-                        <p class="feature-desc">De 7:00 a 12:00h</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">🥘</div>
-                        <h3 class="feature-title">Dinars</h3>
-                        <p class="feature-desc">Menú diari i carta</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">🥂</div>
-                        <h3 class="feature-title">Events Privats</h3>
-                        <p class="feature-desc">Celebracions especials</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
 
-        <!-- Carta -->
-        <section class="carta" id="carta">
-            <h2 class="section-title">La Nostra Carta</h2>
-            <div class="carta-container">
-                <!-- Entrepans -->
-                <div class="carta-category">
-                    <h3 class="carta-category-title">Entrepans 2.0</h3>
+        .message {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            opacity: 0.8;
+            margin-bottom: 3rem;
+        }
 
-                    <div class="carta-item">
-                        <div class="carta-item-info">
-                            <h4 class="carta-item-name">Barranquet</h4>
-                            <p class="carta-item-desc">
-                                Entrecuixa pollastre, formatge, creilles, bacon,
-                                salsa secreta
-                            </p>
-                        </div>
-                    </div>
+        .progress-container {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
 
-                    <div class="carta-item">
-                        <div class="carta-item-info">
-                            <h4 class="carta-item-name">Madrid</h4>
-                            <p class="carta-item-desc">Calamars rebozats</p>
-                        </div>
-                    </div>
+        .progress-bar {
+            height: 100%;
+            width: 60%;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            border-radius: 10px;
+            animation: progress 2s ease-in-out infinite;
+        }
 
-                    <div class="carta-item">
-                        <div class="carta-item-info">
-                            <h4 class="carta-item-name">Serranito</h4>
-                            <p class="carta-item-desc">
-                                Secreto iberic, pernil, pimentó i tomata
-                                refregada
-                            </p>
-                        </div>
-                    </div>
+        @keyframes progress {
+            0% {
+                width: 20%;
+            }
+            50% {
+                width: 70%;
+            }
+            100% {
+                width: 20%;
+            }
+        }
 
-                    <div class="carta-item">
-                        <div class="carta-item-info">
-                            <h4 class="carta-item-name">Chivito</h4>
-                            <p class="carta-item-desc">
-                                Llom, formatge, bacon, lletuga, tomata,
-                                maionesa, ou fregit
-                            </p>
-                        </div>
-                    </div>
+        .gears {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
 
-                    <div class="carta-item">
-                        <div class="carta-item-info">
-                            <h4 class="carta-item-name">Brascada</h4>
-                            <p class="carta-item-desc">
-                                Ternera, pernil, ceba pochada
-                            </p>
-                        </div>
-                    </div>
+        .gear {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #e94560;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+        }
 
-                    <div class="carta-item">
-                        <div class="carta-item-info">
-                            <h4 class="carta-item-name">Almussafes</h4>
-                            <p class="carta-item-desc">
-                                Sobrasada, formatge i ceba pochada
-                            </p>
-                        </div>
-                    </div>
+        .gear:nth-child(2) {
+            animation-direction: reverse;
+            border-color: #ff6b6b;
+            border-top-color: transparent;
+        }
 
-                    <div class="carta-item">
-                        <div class="carta-item-info">
-                            <h4 class="carta-item-name">Figatell</h4>
-                            <p class="carta-item-desc">
-                                Figatells, albergina, pimentó i ceba pochada
-                            </p>
-                        </div>
-                    </div>
+        .gear:nth-child(3) {
+            border-color: #e94560;
+            border-top-color: transparent;
+        }
 
-                    <div class="carta-item">
-                        <div class="carta-item-info">
-                            <h4 class="carta-item-name">De la Casa</h4>
-                            <p class="carta-item-desc">
-                                Llom, formatge, maionesa, creilles, xampinyo i
-                                salsa mery
-                            </p>
-                        </div>
-                    </div>
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
 
-                    <div class="carta-item">
-                        <div class="carta-item-info">
-                            <h4 class="carta-item-name">El Nou</h4>
-                            <p class="carta-item-desc">
-                                Llom, ou fregit trencat, pimentó encurtit,
-                                botifarra semi-picant
-                            </p>
-                        </div>
-                    </div>
+        .contact {
+            margin-top: 2rem;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
 
-                    <div class="carta-note">
-                        <strong>Entrepa, una beguda i café</strong> (olives i
-                        cacau) —
-                        <strong style="color: var(--color-wine)">9,00€</strong>
-                    </div>
-                </div>
+        .contact a {
+            color: #e94560;
+            text-decoration: none;
+        }
 
-                <!-- Cavall -->
-                <div class="carta-category">
-                    <h3 class="carta-category-title">Cavall</h3>
+        .contact a:hover {
+            text-decoration: underline;
+        }
 
-                    <div class="carta-item">
-                        <div class="carta-item-info">
-                            <h4 class="carta-item-name">Cavall</h4>
-                            <p class="carta-item-desc">
-                                Carn de potro, creilles i allets tendres
-                            </p>
-                        </div>
-                    </div>
+        .dots {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: -1;
+        }
 
-                    <div class="carta-note">
-                        <strong>Entrepa, una beguda i café</strong> (olives i
-                        cacau) —
-                        <strong style="color: var(--color-wine)">10,00€</strong>
-                    </div>
-                </div>
+        .dot {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 15s infinite;
+        }
 
-                <!-- Extras -->
-                <div class="carta-extras">
-                    <h4 class="carta-extras-title">Extres</h4>
-                    <ul
-                        style="
-                            list-style: none;
-                            font-size: 0.95rem;
-                            color: var(--color-black-soft);
-                        "
-                    >
-                        <li style="margin-bottom: 0.5rem">
-                            • Tot entrepa que continga carn de potro tindrà un
-                            extra de <strong>1,00€</strong>
-                        </li>
-                        <li style="margin-bottom: 0.5rem">
-                            • En cremaet increment <strong>0,50€</strong>
-                        </li>
-                        <li>• Sols entra una beguda, la resta es paga apart</li>
-                    </ul>
-                </div>
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dots">
+        <div class="dot" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="dot" style="left: 20%; animation-delay: 2s;"></div>
+        <div class="dot" style="left: 30%; animation-delay: 4s;"></div>
+        <div class="dot" style="left: 40%; animation-delay: 1s;"></div>
+        <div class="dot" style="left: 50%; animation-delay: 3s;"></div>
+        <div class="dot" style="left: 60%; animation-delay: 5s;"></div>
+        <div class="dot" style="left: 70%; animation-delay: 2.5s;"></div>
+        <div class="dot" style="left: 80%; animation-delay: 4.5s;"></div>
+        <div class="dot" style="left: 90%; animation-delay: 1.5s;"></div>
+    </div>
 
-                <!-- Fora de carta -->
-                <div
-                    class="carta-category"
-                    style="margin-top: var(--spacing-lg)"
-                >
-                    <h3 class="carta-category-title">Fora de Carta</h3>
-                    <p
-                        class="carta-item-desc"
-                        style="margin-bottom: var(--spacing-sm)"
-                    >
-                        Consulta al cambrer que hi ha hui:
-                    </p>
-                    <ul
-                        class="carta-extras-list"
-                        style="
-                            list-style: none;
-                            display: flex;
-                            flex-direction: column;
-                            gap: 0.5rem;
-                        "
-                    >
-                        <li><span>Tortilles.</span></li>
-                        <li><span>Abadejo.</span></li>
-                        <li><span>All i pebre.</span></li>
-                        <li><span>Magre en tomata.</span></li>
-                        <li><span>Embutit de carnisseria.</span></li>
-                        <li><span>Manetes de porc.</span></li>
-                        <li><span>Carrilleres.</span></li>
-                    </ul>
-                    <p
-                        class="carta-item-desc"
-                        style="
-                            margin-top: var(--spacing-sm);
-                            font-style: italic;
-                        "
-                    >
-                        Algunes d'aquestes coses segur que estan
-                    </p>
-                </div>
-            </div>
-        </section>
+    <div class="container">
+        <div class="gears">
+            <div class="gear"></div>
+            <div class="gear"></div>
+            <div class="gear"></div>
+        </div>
 
-        <!-- Horarios -->
-        <section class="horarios" id="horarios">
-            <h2 class="section-title">Horari</h2>
-            <div class="horarios-grid">
-                <div class="horario-item">
-                    <span class="horario-dia">Dilluns</span>
-                    <span class="horario-horas">7:00 - 16:30</span>
-                </div>
-                <div class="horario-item">
-                    <span class="horario-dia">Dimarts</span>
-                    <span class="horario-horas">7:00 - 16:30</span>
-                </div>
-                <div class="horario-item">
-                    <span class="horario-dia">Dimecres</span>
-                    <span class="horario-horas">7:00 - 16:30</span>
-                </div>
-                <div class="horario-item">
-                    <span class="horario-dia">Dijous</span>
-                    <span class="horario-horas">7:00 - 16:30</span>
-                </div>
-                <div class="horario-item">
-                    <span class="horario-dia">Divendres</span>
-                    <span class="horario-horas">7:00 - 16:30</span>
-                </div>
-                <div class="horario-item">
-                    <span class="horario-dia">Dissabte</span>
-                    <span class="horario-horas">7:00 - 16:30</span>
-                </div>
-                <div class="horario-item">
-                    <span class="horario-dia">Diumenge</span>
-                    <span class="horario-cerrado">Tancat</span>
-                </div>
-            </div>
-            <div class="horarios-note">
-                <strong>🥘 Paella Valenciana</strong>
-                Tots els divendres! Reserva la teua.
-            </div>
-        </section>
+        <h1>Cal Marengo</h1>
+        <p class="subtitle">Sitio web en construccion</p>
 
-        <!-- Contacto -->
-        <section class="contacto" id="contacto">
-            <h2 class="section-title">Contacte</h2>
-            <div class="contacto-grid">
-                <div class="contacto-info">
-                    <div class="contacto-item">
-                        <div class="contacto-icon">📍</div>
-                        <div class="contacto-text">
-                            <h3>Direcció</h3>
-                            <p>
-                                Carrer Cura Sapinya, 32<br />46114 Vinalesa,
-                                València
-                            </p>
-                            <a
-                                href="https://maps.app.goo.gl/GKktdvfg3aHN28Wj9"
-                                target="_blank"
-                                rel="noopener"
-                                >Com arribar →</a
-                            >
-                        </div>
-                    </div>
-                    <div class="contacto-item">
-                        <div class="contacto-icon">📞</div>
-                        <div class="contacto-text">
-                            <h3>Telèfon</h3>
-                            <p><a href="tel:681035690">681 035 690</a></p>
-                            <p style="font-size: 0.85rem; opacity: 0.7">
-                                Reserva per telèfon o WhatsApp
-                            </p>
-                        </div>
-                    </div>
-                    <div class="contacto-item">
-                        <div class="contacto-icon">📷</div>
-                        <div class="contacto-text">
-                            <h3>Instagram</h3>
-                            <p>
-                                <a
-                                    href="https://www.instagram.com/calmarengo/"
-                                    target="_blank"
-                                    rel="noopener"
-                                    >@calmarengo</a
-                                >
-                            </p>
-                        </div>
-                    </div>
-                    <div class="contacto-cta">
-                        <a href="tel:681035690" class="btn btn-primary"
-                            >Reservar Taula</a
-                        >
-                    </div>
-                </div>
-                <div class="contacto-map">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3079.5!2d-0.3686!3d39.5397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMznCsDMyJzIyLjkiTiAwwrAyMicwNy4wIlc!5e0!3m2!1ses!2ses!4v1234567890"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Ubicació Cal Marengo"
-                    >
-                    </iframe>
-                </div>
-            </div>
-        </section>
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
 
-        <!-- Footer -->
-        <footer>
-            <div class="footer-content">
-                <div class="footer-col">
-                    <h4>Cal Marengo</h4>
-                    <p>Gastrobar<br />Cuina Valenciana</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Horari</h4>
-                    <p>
-                        Dilluns a Dissabte<br />7:00 - 16:30<br />Diumenge
-                        tancat
-                    </p>
-                </div>
-                <div class="footer-col">
-                    <h4>Contacte</h4>
-                    <p>
-                        C/ Cura Sapinya, 32<br />46114 Vinalesa, València<br /><a
-                            href="tel:681035690"
-                            >681 035 690</a
-                        >
-                    </p>
-                </div>
-                <div class="footer-col">
-                    <h4>Segueix-nos</h4>
-                    <div class="footer-social">
-                        <a
-                            href="https://www.instagram.com/calmarengo/"
-                            target="_blank"
-                            rel="noopener"
-                            aria-label="Instagram"
-                            >📷</a
-                        >
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2024 Cal Marengo Gastrobar. Tots els drets reservats.</p>
-            </div>
-        </footer>
+        <p class="message">
+            Estamos trabajando para ofrecerte la mejor experiencia.<br>
+            Muy pronto estaremos en linea.
+        </p>
 
-        <!-- JavaScript -->
-        <script src="js/main.js"></script>
-    </body>
+        <div class="contact">
+            <p>Mientras tanto, puedes contactarnos en:</p>
+            <p><a href="mailto:info@calmarengo.com">info@calmarengo.com</a></p>
+        </div>
+    </div>
+</body>
 </html>
