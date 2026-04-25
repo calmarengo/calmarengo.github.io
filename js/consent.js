@@ -1,6 +1,6 @@
 // Banner de consentimiento de cookies + carga condicional de Google Analytics.
-// Solo se inyecta GA si el visitante acepta. La decisión se guarda en
-// localStorage para no volver a preguntar.
+// Solo se inyecta GA si el visitante acepta. La decisión se guarda en una
+// cookie con Path=/ para que se comparta entre /, /es/, /carta y /es/carta.
 (function () {
     var GA_ID = "G-J310B3615C";
     var STORAGE_KEY = "cm_consent_v1";
@@ -34,11 +34,23 @@
     }
 
     function setConsent(value) {
-        try { localStorage.setItem(STORAGE_KEY, value); } catch (_) {}
+        try {
+            var maxAge = 60 * 60 * 24 * 365; // 1 año
+            document.cookie =
+                STORAGE_KEY + "=" + encodeURIComponent(value) +
+                ";path=/;max-age=" + maxAge + ";SameSite=Lax";
+        } catch (_) {}
     }
 
     function getConsent() {
-        try { return localStorage.getItem(STORAGE_KEY); } catch (_) { return null; }
+        try {
+            var match = document.cookie.match(
+                new RegExp("(?:^|; )" + STORAGE_KEY + "=([^;]*)")
+            );
+            return match ? decodeURIComponent(match[1]) : null;
+        } catch (_) {
+            return null;
+        }
     }
 
     function hideBanner() {
