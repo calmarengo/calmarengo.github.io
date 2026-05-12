@@ -679,7 +679,11 @@ footer {
     }
 
     .lang-switch {
-        display: none;
+        margin-left: 0;
+        padding-left: 0;
+        border-left: none;
+        justify-content: center;
+        padding-top: var(--spacing-sm);
     }
 
     .hero-claim {
