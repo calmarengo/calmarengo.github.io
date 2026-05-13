@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#1a1a1a"/>
+  <rect x="40" y="40" width="1120" height="550" fill="none" stroke="#c9a962" stroke-width="1.5"/>
+  <g text-anchor="middle" fill="#c9a962">
+    <text x="600" y="280"
+          font-family="Cormorant Garamond, Iowan Old Style, Georgia, serif"
+          font-size="140"
+          font-style="italic"
+          font-weight="600">Cal Marengo</text>
+    <line x1="450" x2="750" y1="330" y2="330" stroke="#c9a962" stroke-width="1.5"/>
+    <text x="600" y="395"
+          font-family="Montserrat, Helvetica, Arial, sans-serif"
+          font-size="36"
+          letter-spacing="8"
+          font-weight="500">GASTROBAR · COCINA VALENCIANA</text>
+    <text x="600" y="535"
+          font-family="Montserrat, Helvetica, Arial, sans-serif"
+          font-size="26"
+          letter-spacing="5"
+          font-weight="400"
+          fill="#d4bc7c">VINALESA · VALÈNCIA</text>
+  </g>
+</svg>
