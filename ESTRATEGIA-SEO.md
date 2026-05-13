@@ -85,7 +85,8 @@
 #### Core Web Vitals
 - Las fuentes de Google están con `preconnect` (implementado)
 - CSS minificado en producción
-- JavaScript diferido o al final del body
+- JavaScript diferido o al final del body — `defer` añadido en todos los HTMLs
+- Resultado actual (mayo 2026): LCP 1.3s, FCP 1.3s, CLS 0 — CWV aprobados
 
 ### Corto Plazo (1-2 semanas)
 
@@ -149,10 +150,12 @@
 - [x] `/robots.txt` - Instrucciones para crawlers
 
 ### Pendiente de Crear
-- [ ] `/img/og-image.jpg` (1200x630px)
-- [ ] `/img/logo.png`
-- [ ] `/img/favicon.ico`
-- [ ] `/img/apple-touch-icon.png`
+- [x] `/img/og-image.jpg` (1200x630px) — placeholder tipográfico, sustituir por foto real cuando esté disponible
+- [x] `/img/logo.png` — placeholder tipográfico
+- [x] `/img/favicon.ico` + `/img/favicon.svg` + sizes 16/32
+- [x] `/img/apple-touch-icon.png` (180×180)
+- [x] `/img/android-chrome-192.png` y `/img/android-chrome-512.png` (PWA)
+- [x] `/manifest.webmanifest`
 
 ### Registro en Buscadores
 - [ ] Enviar sitemap a Google Search Console

@@ -29,16 +29,30 @@
         />
 
         <!-- Favicon -->
+        <link rel="icon" type="image/svg+xml" href="../img/favicon.svg" />
         <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
-        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png" />
+        <link rel="manifest" href="../manifest.webmanifest" />
+        <meta name="theme-color" content="#1a1a1a" />
+        <meta name="color-scheme" content="light" />
 
-        <!-- Fonts -->
+        <!-- Fonts (async, non-blocking) -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
+            rel="preload"
+            as="style"
             href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;500;600&display=swap"
-            rel="stylesheet"
+            onload="this.onload=null;this.rel='stylesheet'"
         />
+        <noscript>
+            <link
+                href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;500;600&display=swap"
+                rel="stylesheet"
+            />
+        </noscript>
 
         <!-- CSS -->
         <link rel="stylesheet" href="../css/styles.css" />
@@ -193,9 +207,9 @@
         </footer>
 
         <!-- Datos de la carta -->
-        <script src="../js/carta-data.js"></script>
+        <script src="../js/carta-data.js" defer></script>
         <script>
-            mountCarta("es");
+            document.addEventListener('DOMContentLoaded', () => mountCarta("es"));
         </script>
     </body>
 </html>
