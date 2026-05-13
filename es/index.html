@@ -2,7 +2,7 @@
 <html lang="es">
     <head>
         <!-- Banner de consentimiento + Google Analytics (carga condicional) -->
-        <script src="../js/consent.js"></script>
+        <script src="../js/consent.js" defer></script>
 
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -96,8 +96,61 @@
             />
         </noscript>
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="../css/styles.css" />
+        <!-- Critical CSS inline (above-the-fold; sync con css/styles.css) -->
+        <style>
+            :root{--color-gold:#c9a962;--color-gold-light:#d4bc7c;--color-gold-dark:#a68b4b;--color-black:#1a1a1a;--color-black-soft:#2d2d2d;--color-cream:#f5f1e8;--color-cream-dark:#e8e2d5;--color-wine:#722f37;--font-display:"Cormorant Garamond",Georgia,serif;--font-body:"Montserrat",system-ui,sans-serif;--spacing-xs:0.5rem;--spacing-sm:1rem;--spacing-md:2rem;--spacing-lg:4rem;--spacing-xl:6rem}
+            *{margin:0;padding:0;box-sizing:border-box}
+            html{scroll-behavior:smooth}
+            body{font-family:var(--font-body);background-color:var(--color-cream);color:var(--color-black);line-height:1.6}
+            header{background-color:var(--color-black);padding:var(--spacing-sm) var(--spacing-md);position:fixed;width:100%;top:0;z-index:1000;transition:all .3s ease}
+            header.scrolled{padding:var(--spacing-xs) var(--spacing-md);box-shadow:0 4px 20px rgba(0,0,0,.3)}
+            nav{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+            .logo{font-family:var(--font-display);font-size:1.8rem;font-weight:400;color:var(--color-gold);text-decoration:none;font-style:italic}
+            .nav-links{display:flex;gap:var(--spacing-md);list-style:none}
+            .nav-links a{color:var(--color-cream);text-decoration:none;font-size:.85rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase}
+            .lang-switch{display:flex;gap:.5rem;margin-left:var(--spacing-md);padding-left:var(--spacing-md);border-left:1px solid var(--color-black-soft)}
+            .lang-switch a{color:var(--color-cream);opacity:.5;text-decoration:none;font-size:.75rem;font-weight:600}
+            .lang-switch a.active{opacity:1;color:var(--color-gold)}
+            .mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:.5rem}
+            .mobile-menu-btn span{display:block;width:24px;height:2px;background-color:var(--color-gold);margin:5px 0}
+            .hero{min-height:100vh;background:linear-gradient(135deg,var(--color-black) 0%,var(--color-black-soft) 100%);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:var(--spacing-xl) var(--spacing-md);position:relative;overflow:hidden}
+            .hero-content{position:relative;z-index:1;max-width:800px}
+            .hero-logo{width:180px;height:180px;border-radius:50%;background-color:var(--color-black);border:2px solid var(--color-gold);display:flex;flex-direction:column;justify-content:center;align-items:center;margin:0 auto var(--spacing-lg);box-shadow:0 0 60px rgba(201,169,98,.2)}
+            .hero-logo h1{font-family:var(--font-display);font-size:2rem;font-weight:400;color:var(--color-gold);font-style:italic;line-height:1.1}
+            .hero-logo span{font-family:var(--font-body);font-size:.7rem;color:var(--color-gold);letter-spacing:.15em;text-transform:uppercase;margin-top:.25rem}
+            .hero-tagline{font-family:var(--font-display);font-size:1.5rem;color:var(--color-gold-light);font-style:italic;margin-bottom:var(--spacing-sm)}
+            .hero-claim{font-size:3rem;font-family:var(--font-display);color:var(--color-cream);margin-bottom:var(--spacing-md);line-height:1.2}
+            .hero-subtitle{font-size:1.1rem;color:var(--color-cream);opacity:.8;margin-bottom:var(--spacing-lg);max-width:500px;margin-left:auto;margin-right:auto}
+            .hero-ctas{display:flex;gap:var(--spacing-sm);justify-content:center;flex-wrap:wrap}
+            .btn{display:inline-block;padding:1rem 2rem;font-size:.85rem;font-weight:600;text-decoration:none;text-transform:uppercase;letter-spacing:.1em}
+            .btn-primary{background-color:var(--color-gold);color:var(--color-black);border:2px solid var(--color-gold)}
+            .btn-secondary{background-color:transparent;color:var(--color-cream);border:2px solid var(--color-cream)}
+            #cm-consent{position:fixed;bottom:0;left:0;right:0;z-index:9999;background-color:var(--color-black);color:var(--color-cream);padding:var(--spacing-md);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--spacing-sm);box-shadow:0 -2px 12px rgba(0,0,0,.3)}
+            #cm-consent p{margin:0;flex:1 1 280px;font-size:.9rem;line-height:1.4}
+            .cm-consent-actions{display:flex;gap:.5rem}
+            #cm-consent button{cursor:pointer;border:1px solid var(--color-gold);padding:.5rem 1rem;font-weight:600;border-radius:4px;background-color:transparent;color:var(--color-cream);font-size:.85rem;font-family:inherit}
+            #cm-consent .cm-consent-accept{background-color:var(--color-gold);color:var(--color-black)}
+            @media (max-width:768px){.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background-color:var(--color-black);flex-direction:column;padding:var(--spacing-md);gap:var(--spacing-sm)}.nav-links.active{display:flex}.mobile-menu-btn{display:block}.lang-switch{margin-left:0;padding-left:0;border-left:none;justify-content:center;padding-top:var(--spacing-sm)}.hero-claim{font-size:2rem}.hero-ctas{flex-direction:column;align-items:center}}
+            @media (max-width:600px){#cm-consent{flex-direction:column;align-items:stretch;text-align:center}.cm-consent-actions{justify-content:center}}
+            @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+            .hero-content>*{animation:fadeInUp .8s ease-out forwards}
+            .hero-logo{animation-delay:.1s}
+            .hero-tagline{animation-delay:.2s}
+            .hero-claim{animation-delay:.3s}
+            .hero-subtitle{animation-delay:.4s}
+            .hero-ctas{animation-delay:.5s}
+        </style>
+
+        <!-- Full CSS (async, non-blocking) -->
+        <link
+            rel="preload"
+            as="style"
+            href="../css/styles.css"
+            onload="this.onload=null;this.rel='stylesheet'"
+        />
+        <noscript>
+            <link rel="stylesheet" href="../css/styles.css" />
+        </noscript>
 
         <!-- Schema.org JSON-LD -->
         <script type="application/ld+json">

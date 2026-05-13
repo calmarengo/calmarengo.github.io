@@ -9,11 +9,13 @@
     var lang = htmlLang.indexOf("es") === 0 ? "es" : "val";
     var TEXTS = {
         val: {
+            title: "Avís de galetes",
             msg: "Utilitzem cookies de Google Analytics per saber com es navega per la web.",
             accept: "Acceptar",
             reject: "Rebutjar",
         },
         es: {
+            title: "Aviso de cookies",
             msg: "Usamos cookies de Google Analytics para saber cómo se navega por la web.",
             accept: "Aceptar",
             reject: "Rechazar",
@@ -62,6 +64,8 @@
         var el = document.createElement("div");
         el.id = "cm-consent";
         el.setAttribute("role", "dialog");
+        el.setAttribute("aria-modal", "false");
+        el.setAttribute("aria-label", t.title);
         el.setAttribute("aria-live", "polite");
         el.innerHTML =
             '<p>' + t.msg + '</p>' +
